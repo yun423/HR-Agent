@@ -97,8 +97,8 @@ hr-agent-study/
 │   │   │   └── ...
 │   │   ├── schemas/                # Pydantic 请求/响应模型
 │   │   ├── services/               # 业务逻辑层
-│   │   │   ├── agent_service.py    # ★ HR Agent 核心编排
-│   │   │   ├── agent_skills.py     # ★ Skill 插件系统
+│   │   │   ├── agent_service.py    # HR Agent 核心编排
+│   │   │   ├── agent_skills.py     # Skill 插件系统
 │   │   │   ├── intent_service.py   # 意图分类
 │   │   │   ├── llm_service.py      # LLM 调用封装
 │   │   │   ├── rag_service.py      # RAG 检索增强
@@ -109,7 +109,7 @@ hr-agent-study/
 │   │   │   ├── exam_service.py     # 考试管理
 │   │   │   └── ...
 │   │   └── utils/                  # 工具函数
-│   ├── skills/                       # ★ Skill 插件目录
+│   ├── skills/                       # Skill 插件目录
 │   │   └── hr-agent-email/           # 邮件发送 Skill
 │   │       ├── SKILL.md              # Skill 说明文档
 │   │       ├── skill.json            # Skill 清单
@@ -122,7 +122,7 @@ hr-agent-study/
 │   ├── src/
 │   │   ├── api/                    # 接口请求封装 (Axios)
 │   │   ├── views/
-│   │   │   ├── agent/HRAgent.vue   # ★ HR Agent 对话界面
+│   │   │   ├── agent/HRAgent.vue   # HR Agent 对话界面
 │   │   │   ├── dashboard/          # 工作台
 │   │   │   ├── recruitment/        # 智能招聘
 │   │   │   │   ├── JDGenerator.vue       # JD 生成
