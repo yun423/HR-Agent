@@ -1,0 +1,855 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: hr_agent
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.15@725407927b04e236212083d20e92830d60fa944e42cd357ef6902c160414f6f1
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        sourceType: llm
+        targetType: answer
+      id: llm-answer
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17442665423390-source-1744266639738-target
+      selected: false
+      source: '17442665423390'
+      sourceHandle: source
+      target: '1744266639738'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1743148336801-true-llm-target
+      selected: false
+      source: '1743148336801'
+      sourceHandle: 'true'
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1743142225149-source-1743148336801-target
+      selected: false
+      source: '1743142225149'
+      sourceHandle: source
+      target: '1743148336801'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1743148336801-b5be01a8-8071-43f2-98f4-c34f79a9c73c-17442665423390-target
+      selected: false
+      source: '1743148336801'
+      sourceHandle: b5be01a8-8071-43f2-98f4-c34f79a9c73c
+      target: '17442665423390'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1743148336801-c94cf5d1-4035-490f-849c-a922b88954da-17597569821740-target
+      selected: false
+      source: '1743148336801'
+      sourceHandle: c94cf5d1-4035-490f-849c-a922b88954da
+      target: '17597569821740'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17597569821740-source-17431481696490-target
+      selected: false
+      source: '17597569821740'
+      sourceHandle: source
+      target: '17431481696490'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1743148336801-5faef087-8f16-400e-86f1-3854f3f048b7-17598067313240-target
+      selected: false
+      source: '1743148336801'
+      sourceHandle: 5faef087-8f16-400e-86f1-3854f3f048b7
+      target: '17598067313240'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17598067313240-source-1743148383361-target
+      selected: false
+      source: '17598067313240'
+      sourceHandle: source
+      target: '1743148383361'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17601894447500-source-1744707395322-target
+      selected: false
+      source: '17601894447500'
+      sourceHandle: source
+      target: '1744707395322'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17602672789400-source-1744809027094-target
+      selected: false
+      source: '17602672789400'
+      sourceHandle: source
+      target: '1744809027094'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1743148336801-b50e685b-9a19-4b61-9b39-652327ded54e-17602672789400-target
+      source: '1743148336801'
+      sourceHandle: b50e685b-9a19-4b61-9b39-652327ded54e
+      target: '17602672789400'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1743148336801-a6a7b038-409e-45ff-aceb-066f66524e7c-17601894447500-target
+      source: '1743148336801'
+      sourceHandle: a6a7b038-409e-45ff-aceb-066f66524e7c
+      target: '17601894447500'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: type
+          max_length: 48
+          options: []
+          required: true
+          type: number
+          variable: type
+        - label: jd
+          max_length: 48000
+          options: []
+          required: false
+          type: paragraph
+          variable: jd
+        - label: jianli
+          max_length: 80000
+          options: []
+          required: false
+          type: paragraph
+          variable: jianli
+        - label: 岗位名称
+          max_length: 48
+          options: []
+          required: false
+          type: text-input
+          variable: jobName
+        - label: 岗位职责
+          max_length: 1000
+          options: []
+          required: false
+          type: paragraph
+          variable: jobResponsibilities
+        - label: fileContent
+          max_length: 50000
+          options: []
+          required: false
+          type: paragraph
+          variable: fileContent
+        - label: evaluationModel
+          max_length: 5000
+          options: []
+          required: false
+          type: paragraph
+          variable: evaluationModel
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: file
+          max_length: 5
+          options: []
+          required: false
+          type: file
+          variable: file
+      height: 291
+      id: '1743142225149'
+      position:
+        x: 115.7300344801958
+        y: 797.968385104103
+      positionAbsolute:
+        x: 115.7300344801958
+        y: 797.968385104103
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 生成JD
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+            '
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+            thinking: false
+          mode: chat
+          name: deepseek-v4-flash
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: ab0db671-0b04-460a-b40e-bc7c05833541
+          role: system
+          text: '请根据用户的需求，写一份JD。
+
+            生成的职位名称要和用户输入的保持一致，不能添加格外的信息！'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 116
+      id: llm
+      position:
+        x: 1035.2497815798226
+        y: 335.44509471851745
+      positionAbsolute:
+        x: 1035.2497815798226
+        y: 335.44509471851745
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#llm.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 103
+      id: answer
+      position:
+        x: 1413.4461250798065
+        y: 335.44509471851745
+      positionAbsolute:
+        x: 1413.4461250798065
+        y: 335.44509471851745
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17597569821740.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 (1)
+        type: answer
+        variables: []
+      height: 103
+      id: '17431481696490'
+      position:
+        x: 1413.4461250798065
+        y: 490.911957298477
+      positionAbsolute:
+        x: 1413.4461250798065
+        y: 490.911957298477
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 08a4f03d-9b67-4ff9-9230-5cc0d40dd8d5
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1743142225149'
+            - type
+          id: 'true'
+          logical_operator: and
+        - case_id: c94cf5d1-4035-490f-849c-a922b88954da
+          conditions:
+          - comparison_operator: '='
+            id: 6529305c-acf7-435b-b018-84813df923b7
+            numberVarType: constant
+            value: '2'
+            varType: number
+            variable_selector:
+            - '1743142225149'
+            - type
+          id: c94cf5d1-4035-490f-849c-a922b88954da
+          logical_operator: and
+        - case_id: 5faef087-8f16-400e-86f1-3854f3f048b7
+          conditions:
+          - comparison_operator: '='
+            id: da16e1ef-7b88-41a8-9b54-213839ba33b8
+            value: '3'
+            varType: number
+            variable_selector:
+            - '1743142225149'
+            - type
+          id: 5faef087-8f16-400e-86f1-3854f3f048b7
+          logical_operator: and
+        - case_id: b5be01a8-8071-43f2-98f4-c34f79a9c73c
+          conditions:
+          - comparison_operator: '='
+            id: 7dc9456a-39bd-4aa1-877e-adbb1b67dc13
+            value: '4'
+            varType: number
+            variable_selector:
+            - '1743142225149'
+            - type
+          id: b5be01a8-8071-43f2-98f4-c34f79a9c73c
+          logical_operator: and
+        - case_id: a6a7b038-409e-45ff-aceb-066f66524e7c
+          conditions:
+          - comparison_operator: '='
+            id: da420212-6b58-4618-ab96-b55952da1940
+            value: '5'
+            varType: number
+            variable_selector:
+            - '1743142225149'
+            - type
+          id: a6a7b038-409e-45ff-aceb-066f66524e7c
+          logical_operator: and
+        - case_id: b50e685b-9a19-4b61-9b39-652327ded54e
+          conditions:
+          - comparison_operator: '='
+            id: c5ab43ba-a0d5-45bf-b926-c55e6ef598f9
+            value: '6'
+            varType: number
+            variable_selector:
+            - '1743142225149'
+            - type
+          id: b50e685b-9a19-4b61-9b39-652327ded54e
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 2
+        type: if-else
+      height: 364
+      id: '1743148336801'
+      position:
+        x: 495.9910559663517
+        y: 780.0824382854466
+      positionAbsolute:
+        x: 495.9910559663517
+        y: 780.0824382854466
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17598067313240.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 103
+      id: '1743148383361'
+      position:
+        x: 1400.406833037448
+        y: 674.0161644223742
+      positionAbsolute:
+        x: 1400.406833037448
+        y: 674.0161644223742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        author: lkp
+        desc: ''
+        height: 205
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"type=1：生成招聘岗位信息JD","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":"font-size:
+          16px;"},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"type=2:生成简历评价模型","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":"font-size:
+          16px;"},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"type=3：对简历进行评分","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":"font-size:
+          16px;"},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"type=4：生成面试方案","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":"font-size:
+          16px;"},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"type=5：根据文档内容生成试卷","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":"font-size:
+          16px;"},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"type=6：对用户试卷内容进行打分","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 390
+      height: 205
+      id: '1744266425372'
+      position:
+        x: 324.8519904461481
+        y: 474.4993810446091
+      positionAbsolute:
+        x: 324.8519904461481
+        y: 474.4993810446091
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 390
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 智能面试：根据简历生成面试方案
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            thinking: false
+          mode: chat
+          name: deepseek-v4-flash
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 3d8ad1ca-df6d-4dba-92a2-bc0b730f127e
+          role: system
+          text: 请根据输入的求职者简历{{#1743142225149.jianli#}}以及招聘岗位JD{{#1743142225149.jd#}}信息，从HR的角度，为该求职者生成面试方案，以及面试题目(面试题不少于15道）
+        selected: false
+        title: LLM 4
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 116
+      id: '17442665423390'
+      position:
+        x: 1035.2497815798226
+        y: 838.2219086935861
+      positionAbsolute:
+        x: 1035.2497815798226
+        y: 838.2219086935861
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17442665423390.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 103
+      id: '1744266639738'
+      position:
+        x: 1400.406833037448
+        y: 838.2219086935861
+      positionAbsolute:
+        x: 1400.406833037448
+        y: 838.2219086935861
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17601894447500.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 103
+      id: '1744707395322'
+      position:
+        x: 1400.406833037448
+        y: 994.9431875983676
+      positionAbsolute:
+        x: 1400.406833037448
+        y: 994.9431875983676
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17602672789400.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 6
+        type: answer
+        variables: []
+      height: 103
+      id: '1744809027094'
+      position:
+        x: 1400.406833037448
+        y: 1139.9842041247202
+      positionAbsolute:
+        x: 1400.406833037448
+        y: 1139.9842041247202
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 根据JD，生成简历评价标准
+        model:
+          completion_params:
+            temperature: 0.7
+            thinking: false
+          mode: chat
+          name: deepseek-v4-flash
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: fdc3194e-ec29-4cb8-b265-0cc83e0c78ff
+          role: system
+          text: "<instruction>\n根据用户提供的职位描述（JD）信息，生成一个简历评价标准，总分为100分。评价标准应包含至少4个维度，每个维度的分值权重根据JD中的明确要求进行调整。重点考察客观条件（如学历、工作经验、技能、项目经验等），一些软性技能，如工作态度、团队合作、性格等这种主观条件不要出现在评分标准中。以及一些不好从简历中判断，或者一般应聘者不会写上去的评判标准也不要列上去。\n\
+            以下是具体步骤：\n\n1. **提取JD中的关键条件**：从JD中识别明确要求的条件（如学历、工作经验年限、技能、项目经验等），并将这些条件作为高权重维度。\n\
+            2. **定义评价维度**：至少选择4个维度，例如：学历、工作经验、技能匹配度、证书/资格、语言能力等。每个维度的分值权重根据JD中的重要性分配。\n\
+            3. **设置评分规则**：\n   - 对于JD中明确要求的条件（如“学历要求本科及以上”，“项目经验3年及以上”），不符合的直接打0分。反之，JD中没有明确要求，则分层次打分，如本科及以上20分，大专以上：10分，其他：0分。\n\
+            \   - 其他维度根据匹配程度打分（如完全匹配100%，部分匹配50%等）。\n4. **分配权重**：将总分100分分配到各维度，JD中明确要求的条件权重应高于其他条件。\n\
+            5. **生成评价标准**：以markdown列表形式输出评分标准，包含维度名称、分值权重、评分规则和说明。\n\n输出时不要包含任何XML标签，仅提供纯文本格式的评价标准。\n\
+            </instruction>"
+        - id: 9cfae1b6-46c6-462d-9166-8410c740337e
+          role: user
+          text: 'JD信息：
+
+            {{#sys.query#}}
+
+            '
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties: {}
+            required: []
+            type: object
+        structured_output_enabled: false
+        title: LLM 2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 116
+      id: '17597569821740'
+      position:
+        x: 1035.2497815798226
+        y: 490.911957298477
+      positionAbsolute:
+        x: 1035.2497815798226
+        y: 490.911957298477
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 简历筛选：根据评价模型，对简历进行评分，并分析简历的不合理之处
+        model:
+          completion_params:
+            temperature: 0.7
+            thinking: false
+          mode: chat
+          name: deepseek-v4-flash
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: fdc3194e-ec29-4cb8-b265-0cc83e0c78ff
+          role: system
+          text: "<instruction>\n请根据以下步骤对简历进行评价和分析：\n\n1. **评价指标打分**：严格按简历评价标准中给出的指标对每个评价指标进行打分，并给出简短的评分理由。评分指标包括但不限于学历、工作经验、技能匹配度等。每个指标的打分格式为：\n\
+            {\n\t\"评价指标\": \"指标名称\",\n\t\"score\": \"分数\",\n\t\"max\": \"当前指标最高分\"\
+            ,\n\t\"reason\": \"评分理由\"\n}\n同时，还要把简历里面的一些元数据提取出来，如姓名（name)、应聘岗位(position)、工作年限(workYears)、教育水平(education)、毕业院校(school)、年龄(age)、性别(sex)\n\
+            其中工作年限workYears为数字型，如0，1，3，10\n最终输出格式示例如下：\n{\n  \"evaluation_metrics\"\
+            : [\n    {\n      \"name\": \"学历\",\n      \"score\": 15,\n      \"max\"\
+            : 20,\n      \"reason\": \"xxx\"\n    }\n  ],\n  \"total_score\": 85,\n\
+            \  \"name\": \"张三\",\n  \"position\": \"前端开发工程师\",\n  \"workYears\": \"\
+            3\",\n  \"教育水平\": \"本科\",\n  \"年龄\": 38,\n  \"sex\": \"男\",\n  \"school\"\
+            : \"上海理工大学\"\n}\n\n注意：\n- 输出中不得包含任何XML标签。 \n约束：\n- 必须严格按照简历评分标准的各个分值来进行评估和打分\n\
+            </instruction>\n\n2.直接输出json\n3.评价示例：\n​\n​​候选人：张三​​\n​​应聘岗位：高级产品经理（5年经验要求）​​\n\
+            一、基础信息（15分）\n学历背景（8分）\n985硕士（匹配岗位要求）→ ​​8分​​\n（若本科为211+硕士可给7分，普通本科+硕士6分）\n\
+            专业相关性（7分）\n计算机科学+辅修市场营销（高度相关）→ ​​7分​​\n（仅计算机专业可给5分，完全不相关专业0分）\n二、工作经验（40分）\n\
+            年限匹配度（10分）\n6年互联网产品经验（超过要求）→ ​​10分​​\n（5年给8分，3-4年给5分）\n公司平台（10分）\n曾任一线大厂（TMD）高级PM\
+            \ → ​​10分​​\n（二线互联网8分，创业公司5分）\n项目质量（15分）\n主导过DAU 500万级产品迭代（有数据证明）→ ​​15分​​\n\
+            （参与过百万级项目10分，无数据描述5分）\n岗位连续性（5分）\n无空窗期，职业路径清晰→ ​​5分​​\n（1年空窗期扣2分）\n三、技能匹配（25分）\n\
+            硬技能（15分）\n精通Axure/SQL/数据分析（岗位JD明确要求）→ ​​15分​​\n（缺SQL扣3分，仅写\"熟悉工具\"无证明扣5分）\n\
+            软技能（10分）\n有跨部门协作案例+用户研究经验→ ​​8分​​\n（未体现沟通能力扣2分）\n四、附加项（20分）\n行业证书（5分）\n\
+            持有NPDP认证→ ​​5分​​\n（无证书0分）\n作品/成果（10分）\n附产品文档链接+获公司创新奖→ ​​8分​​\n（仅有Github链接未说明价值扣2分）\n\
+            语言能力（5分）\n英语六级（非外企岗位够用）→ ​​3分​​\n（流利商务英语可给5分）"
+        - id: 9cfae1b6-46c6-462d-9166-8410c740337e
+          role: user
+          text: '评价模型：
+
+            {{#sys.query#}}
+
+            简历：
+
+            {{#1743142225149.jianli#}}
+
+            '
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties: {}
+            required: []
+            type: object
+        structured_output_enabled: true
+        title: LLM 3
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 132
+      id: '17598067313240'
+      position:
+        x: 1026.202218391924
+        y: 674.0161644223742
+      positionAbsolute:
+        x: 1026.202218391924
+        y: 674.0161644223742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 根据文档内容生成考试试卷
+        model:
+          completion_params:
+            thinking: false
+          mode: chat
+          name: deepseek-v4-flash
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 3d8ad1ca-df6d-4dba-92a2-bc0b730f127e
+          role: system
+          text: "<instruction>\n1. 任务说明：\n   - 你需要根据输入的文档内容以及试卷要求，提取关键信息并生成符合要求的试题。\n\
+            \   - 试题类型包括单选题、多选题、判断题和简答题，需根据文档内容选择最合适的类型。\n   - 每道试题需包含以下字段：\n    \
+            \ * questionText：题目文本，表述清晰明确。\n     * questionType：从枚举值（单选，多选，简答）中选择合适的类型。\n\
+            \     * options：如果是选择题，提供选项列表，并且固定为4个选项（格式为A;B;C;D）；其他类型可为空。\n     * correctAnswers：正确答案。\n\
+            \     * score：当前题目分值，按系统要求输出每道题的分值。\n     * explanation：题目解析，说明正确答案的理由。\n\
+            \   - 最终输出格式为：***questionText|questionType|options|correctAnswers|score|explanation，且不包含任何XML标签。\n\
+            每个题前面用***，用于分隔换行\n\n2. 操作步骤：\n   - 第一步：仔细阅读文档内容，标记可用于生成试题的关键信息点。\n   -\
+            \ 第二步：根据信息点的性质（如事实性、概念性、应用性）确定题目类型。\n   - 第三步：编写题目文本，确保问题明确且与文档内容直接相关。\n\
+            \   - 第四步：如果是选择题，设计干扰项和正确选项；其他类型则跳过此步骤。\n   - 第五步：验证正确答案的准确性，并撰写解析内容。\n\
+            \   - 第六步：按试卷给出的要求给该道题的分值score设置值。\n    - 第七步：按指定格式输出，确保字段顺序和格式正确。\n\n\
+            3. 注意事项：\n   - 题目文本需简洁明了，避免歧义。\n   - 选择题选项需逻辑合理，干扰项具有迷惑性。 \n   - 解析需引用文档内容作为依据。\n\
+            \   - 每种题型的数量要与试卷要求给定的题型数量一致。\n   - 每道题的分值要与试卷要求的分值一致。\n  \n\n</instruction>\n\
+            \n<example>\n输入文档：\n\"光合作用的原料是二氧化碳和水，产物是氧气和葡萄糖。\"\n\n输出：\n***光合作用的直接产物是什么？|多选|氧气;ATP;\
+            \ 氮气; 水|氧气；葡萄糖|2.00|根据文档内容，光合作用的产物明确为氧气和葡萄糖\n***光合作用的原料是什么？|简答||二氧化碳和水|2.00|根据文档内容，光合作用的原料是二氧化碳和水\n\
+            </example>"
+        - id: 08b9b774-e4cd-49a1-8b36-287abf961f96
+          role: user
+          text: '文档内容：{{#1743142225149.fileContent#}}，
+
+            试卷要求：{{#sys.query#}}，'
+        selected: false
+        title: LLM 5
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 116
+      id: '17601894447500'
+      position:
+        x: 1035.2497815798226
+        y: 994.9431875983676
+      positionAbsolute:
+        x: 1035.2497815798226
+        y: 994.9431875983676
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 对用户的试卷内容进行阅卷打分
+        model:
+          completion_params:
+            thinking: false
+          mode: chat
+          name: deepseek-v4-flash
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: c153e0f4-cec8-4d90-8fe6-46f783b131f2
+          role: system
+          text: "请对用户的试卷内容进行阅卷打分。试卷的字段定义：\nquestionText TEXT  ,\n    questionType\
+            \ ENUM('single_choice', 'multiple_choice', 'true_false', 'short_answer',\
+            \ 'essay')  ,\n    options List<String>  如[\"A\",\"B\",\"C\",\"D\"]',\n\
+            \    correctAnswers TEXT COMMENT 'JSON格式存储正确答案',\n    score DECIMAL(5,2)\
+            \ ,  \n    explanation TEXT COMMENT '题目解析',\nuserAnswer text  comment\
+            \ '用户的答案',\nrealScore score DECIMAL(5,2) ,  comment '当前试题得到的分数',\nresult\
+            \  boolean comment '是否正确'\n用户的试卷考试结果是上面字段对象的一个List，包含了多道题的考试结果。\n请根据用户提交的答案userAnswer与真实答案correctAnswers进行正确的打分。\n\
+            对于单选题，要完全一致才得分。\n多选题与简答题，根据回答情况酌情给分。4比如多选题答案有4个，用户只回答了3个正确结果，该题总分是10分，则得7.5分。如果用户回答了3个，有一个错误答案，2个正确答案。则得分为5-2.5=2.5分。\n\
+            简答题根据语义判断得分多少。\n判断后，直接输出realScore结果。多道题的分数，用半角逗号,隔开，按顺序输出。\n必须直接输出结果，如5,8,0\n\
+            如果用户没有作答，必须判0分，否则会收到惩罚！\n"
+        - id: 97dc93e4-313f-4494-8637-a3081a82c9c2
+          role: user
+          text: 用户的试卷内容如下：{{#sys.query#}}
+        selected: false
+        title: LLM 6
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 116
+      id: '17602672789400'
+      position:
+        x: 1035.2497815798226
+        y: 1139.9842041247202
+      positionAbsolute:
+        x: 1035.2497815798226
+        y: 1139.9842041247202
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -92.04409290000422
+      y: -223.7944414339355
+      zoom: 0.7911457314209932
+  rag_pipeline_variables: []
