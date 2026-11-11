@@ -1,0 +1,12 @@
+{
+  "intent": "email_notification",
+  "route": "/system/email-configs",
+  "phases": ["draft", "send"],
+  "prerequisites": ["人工确认后再发送"],
+  "default_phase": "draft",
+  "confirmation_action": "send_email",
+  "phase_scripts": {
+    "draft": "scripts/email_workflow.py:run_draft_phase",
+    "send": "scripts/email_workflow.py:run_send_phase"
+  }
+}

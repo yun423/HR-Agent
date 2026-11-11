@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置Token</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+</head>
+<body>
+    <h1>正在设置认证Token...</h1>
+    <p id="status">请稍候...</p>
+    
+    <script>
+        // 设置token
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjNjM2EzMi01OTZjLTRmZWMtOTU1ZS02ZWFjZTg2ZWIyODEiLCJleHAiOjE3NjAwOTMxMDV9.l_OoM5FKSf3xu1tdRQCNPQhAqJP_Y7A6NQVb29kuPko";
+        
+        // 使用js-cookie设置token
+        if (typeof Cookies !== 'undefined') {
+            Cookies.set('token', token, { expires: 7 });
+            document.getElementById('status').innerHTML = '✅ Token已设置成功！<br>正在跳转到智能面试页面...';
+            
+            // 2秒后跳转
+            setTimeout(() => {
+                window.location.href = '/recruitment/smart-interview';
+            }, 2000);
+        } else {
+            // 备用方案：直接设置cookie
+            document.cookie = `token=${token}; expires=${new Date(Date.now() + 7*24*60*60*1000).toUTCString()}; path=/`;
+            document.getElementById('status').innerHTML = '✅ Token已设置成功（备用方案）！<br>正在跳转到智能面试页面...';
+            
+            // 2秒后跳转
+            setTimeout(() => {
+                window.location.href = '/recruitment/smart-interview';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
